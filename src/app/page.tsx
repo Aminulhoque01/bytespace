@@ -1,9 +1,15 @@
+import Navbar from "../components/layout/Navbar";
+import Features from "../components/sections/Features";
+import Hero from "../components/sections/Hero";
+
  
 
 export default function Home() {
   return (
-    <main>
-      <h1 className="text-red-500">ByteSpace New</h1>
+    <main className="bytespace-grid min-h-screen overflow-hidden">
+      <Navbar />
+      <Hero />
+      <Features/>
     </main>
   );
 }
