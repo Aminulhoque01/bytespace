@@ -19,7 +19,7 @@ body {
   margin: 0;
   background: var(--blue);
   color: var(--white);
-  font-family:  Poppins, sans-serif;
+  font-family:  Poppins;
 }
 
 button,
