@@ -261,7 +261,7 @@ export default function CreatorCTASection() {
         style={{
           width: "164px",
           height: "246px",
-          transform: "rotate(35deg)",
+          transform: "rotate(15deg)",
           clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
           borderRadius: "25px",
         }}
@@ -295,6 +295,7 @@ export default function CreatorCTASection() {
           width: "145px",
           height: "155px",
           transform: "rotate(-20deg)",
+          left:-[60],
           clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
           borderRadius: "25px",
         }}

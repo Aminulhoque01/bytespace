@@ -1,29 +1,21 @@
 "use client";
 
-import { Menu, ShoppingBag, X } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link";
+import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 function ByteSpaceLogo() {
   return (
-    <div className="flex items-center gap-2.5">
-      {/* Logo mark */}
+    <div className="flex items-center">
       <Image
         src="/images/Header_Logo.png"
         alt="ByteSpace logo"
         width={150}
         height={80}
         priority
-        className="
-            block
-            h-auto
-            w-full
-            object-contain
-        
-        "
-        />
-
-      
+        className="block h-auto w-[135px] object-contain"
+      />
     </div>
   );
 }
@@ -32,120 +24,224 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="relative z-50 border-b border-white/10">
-      <div className="mx-auto flex h-[118px] max-w-[1125px] items-center justify-between px-5 lg:px-0">
+    <header className="absolute left-0 top-0 z-50 w-full text-white  ">
+      {/* Subtle grid - NO background */}
+       
+
+      {/* Main Navbar */}
+      <nav
+        className="
+          relative
+          mx-auto
+          flex
+          h-[100px]
+          max-w-[1200px]
+          items-center
+          justify-between
+          px-6
+          lg:px-0
+        "
+      >
         {/* Logo */}
-        <a href="/" className="shrink-0">
+        <Link
+          href="/"
+          className="group relative z-10 flex shrink-0 items-center"
+        >
           <ByteSpaceLogo />
-        </a>
+        </Link>
 
-        {/* Desktop navigation */}
-        <nav className="hidden items-center gap-7 md:flex">
-          <a
-            href="#home"
-            className="text-[16px] font-normal text-white transition-opacity hover:opacity-70"
-          >
-            Home
-          </a>
-
-          <a
-            href="#courses"
-            className="text-[16px] font-normal text-white transition-opacity hover:opacity-70"
-          >
-            Courses
-          </a>
-
-          <a
-            href="#creators"
-            className="text-[16px] font-normal text-white transition-opacity hover:opacity-70"
-          >
-            Creators
-          </a>
-        </nav>
-
-        {/* Right actions */}
-        <div className="hidden items-center gap-7 md:flex">
-          <a
-            href="/login"
-            className="text-[16px] text-white transition-opacity hover:opacity-70"
-          >
-            Sign In
-          </a>
-
-          <a
-            href="/signup"
-            className="text-[16px] text-white transition-opacity hover:opacity-70"
-          >
-            Join Us
-          </a>
-
-          <button
-            type="button"
-            aria-label="Shopping bag"
-            className="text-white transition-transform hover:scale-105"
-          >
-            <ShoppingBag size={22} strokeWidth={1.8} />
-          </button>
+        {/* Desktop Navigation */}
+        <div
+          className="
+            absolute
+            left-1/2
+            hidden
+            -translate-x-1/2
+            items-center
+            gap-8
+            md:flex
+          "
+        >
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/courses">Courses</NavLink>
+          <NavLink href="/creators">Creators</NavLink>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Right Side */}
+        <div className="relative z-10 hidden items-center gap-7 md:flex">
+          <NavLink href="/signin">Sign In</NavLink>
+          <NavLink href="/join">Join Us</NavLink>
+
+          <Link
+            href="/cart"
+            aria-label="Shopping bag"
+            className="
+              ml-1
+              flex
+              h-10
+              w-10
+              items-center
+              justify-end
+              text-white
+              transition-all
+              duration-300
+              hover:opacity-60
+            "
+          >
+            <ShoppingBag
+              size={22}
+              strokeWidth={1.6}
+            />
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
         <button
           type="button"
-          aria-label="Toggle navigation"
           onClick={() => setMobileOpen((value) => !value)}
-          className="flex text-white md:hidden"
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          className="
+            relative
+            z-10
+            flex
+            h-10
+            w-10
+            items-center
+            justify-center
+            text-white
+            transition-opacity
+            hover:opacity-70
+            md:hidden
+          "
         >
           {mobileOpen ? (
-            <X size={27} strokeWidth={1.7} />
+            <X size={25} strokeWidth={1.6} />
           ) : (
-            <Menu size={27} strokeWidth={1.7} />
+            <Menu size={25} strokeWidth={1.6} />
           )}
         </button>
-      </div>
+      </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <div
-        className={`overflow-hidden border-t border-white/10 bg-[#003BE2] transition-all duration-300 md:hidden ${
-          mobileOpen ? "max-h-[350px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`
+          relative
+          overflow-hidden
+          border-t
+          border-white/10
+          bg-black/10
+          backdrop-blur-md
+          transition-all
+          duration-300
+          md:hidden
+          ${
+            mobileOpen
+              ? "max-h-[430px] opacity-100"
+              : "max-h-0 opacity-0"
+          }
+        `}
       >
-        <nav className="flex flex-col px-6 py-6">
-          <a
-            href="#home"
+        <div className="mx-auto flex max-w-[1200px] flex-col px-6 pb-6 pt-3">
+          <MobileLink
+            href="/"
             onClick={() => setMobileOpen(false)}
-            className="border-b border-white/10 py-4 text-[16px]"
           >
             Home
-          </a>
+          </MobileLink>
 
-          <a
-            href="#courses"
+          <MobileLink
+            href="/courses"
             onClick={() => setMobileOpen(false)}
-            className="border-b border-white/10 py-4 text-[16px]"
           >
             Courses
-          </a>
+          </MobileLink>
 
-          <a
-            href="#creators"
+          <MobileLink
+            href="/creators"
             onClick={() => setMobileOpen(false)}
-            className="border-b border-white/10 py-4 text-[16px]"
           >
             Creators
-          </a>
+          </MobileLink>
 
-          <div className="flex gap-6 py-5">
-            <a href="/login">Sign In</a>
-            <a href="/signup">Join Us</a>
+          <div className="my-2 h-px bg-white/10" />
 
-            <ShoppingBag
-              size={21}
-              strokeWidth={1.8}
-              className="ml-auto"
-            />
-          </div>
-        </nav>
+          <MobileLink
+            href="/signin"
+            onClick={() => setMobileOpen(false)}
+          >
+            Sign In
+          </MobileLink>
+
+          <MobileLink
+            href="/join"
+            onClick={() => setMobileOpen(false)}
+          >
+            Join Us
+          </MobileLink>
+
+          <MobileLink
+            href="/cart"
+            onClick={() => setMobileOpen(false)}
+          >
+            Shopping Bag
+          </MobileLink>
+        </div>
       </div>
     </header>
+  );
+}
+
+function NavLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="
+        text-[16px]
+        font-normal
+        tracking-[-0.2px]
+        text-white/95
+        transition-all
+        duration-200
+        hover:text-white/60
+      "
+    >
+      {children}
+    </Link>
+  );
+}
+
+function MobileLink({
+  href,
+  children,
+  onClick,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onClick: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className="
+        border-b
+        border-white/10
+        py-4
+        text-[16px]
+        font-normal
+        text-white/95
+        transition-opacity
+        hover:opacity-60
+      "
+    >
+      {children}
+    </Link>
   );
 }

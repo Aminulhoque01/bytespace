@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { Search, Star } from "lucide-react";
+import Link from "next/link";
+import Navbar from "../layout/Navbar";
 
 const students = [
   "/images/students/student1.png",
@@ -47,6 +49,10 @@ export default function Hero() {
         }}
       />
 
+      <div className="mb-10 pt-10">
+         <Navbar />
+      </div>
+
       {/* =========================================================
           TOP LEFT LIME DECORATION
       ========================================================= */}
@@ -57,7 +63,7 @@ export default function Hero() {
             pointer-events-none
             absolute
             -left-[115px]
-            -top-[20px]
+            top-[110px]
             z-[1]
             h-[220px]
             w-[220px]
@@ -78,7 +84,7 @@ export default function Hero() {
           pointer-events-none
           absolute
           -right-[105px]
-          -top-[20px]
+          top-[120px]
           z-[1]
           h-[60px]
           w-[80px]
@@ -95,6 +101,8 @@ export default function Hero() {
           lg:w-[225px]
         "
       />
+
+   
 
       {/* =========================================================
           MAIN CONTENT
@@ -232,7 +240,8 @@ export default function Hero() {
 
           {/* Search Button */}
 
-          <button
+          <Link href="/search">
+           <button
             type="button"
             className="
               h-[52px]
@@ -256,6 +265,7 @@ export default function Hero() {
           >
             Search
           </button>
+          </Link>
         </div>
 
         {/* =======================================================
