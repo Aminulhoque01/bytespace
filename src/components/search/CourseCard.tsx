@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { BarChart3, Star } from "lucide-react";
+import Link from "next/link";
 
 export interface Course {
   id: number;
@@ -27,7 +28,8 @@ export default function CourseCard({
   course,
 }: CourseCardProps) {
   return (
-    <article
+    <Link href="/course-details">
+      <article
       className="
         group
         box-border
@@ -285,5 +287,6 @@ export default function CourseCard({
         </div>
       </div>
     </article>
+    </Link>
   );
 }
