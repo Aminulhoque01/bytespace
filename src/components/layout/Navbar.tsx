@@ -69,7 +69,7 @@ export default function Navbar() {
 
         {/* Right Side */}
         <div className="relative z-10 hidden items-center gap-7 md:flex">
-          <NavLink href="/signin">Sign In</NavLink>
+          <NavLink href="/sign-in">Sign In</NavLink>
           <NavLink href="/join">Join Us</NavLink>
 
           <Link

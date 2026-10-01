@@ -1,14 +1,25 @@
+
+
+
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Google } from "lucide-react";
-
-/* =========================================================
-   LOGIN PAGE
-========================================================= */
+import { useState } from "react";
+import {
+  Eye,
+  EyeOff,
+  Mail,
+  LockKeyhole,
+} from "lucide-react";
+import {
+  FaFacebookF,
+  FaGoogle,
+} from "react-icons/fa";
 
 export default function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <main
       className="
@@ -60,7 +71,7 @@ export default function LoginPage() {
           flex
           min-h-screen
           w-full
-          max-w-[1159px]
+          max-w-[959px]
           flex-col
           px-[24px]
           py-[28px]
@@ -71,12 +82,11 @@ export default function LoginPage() {
           lg:py-[48px]
         "
       >
-
         {/* ===================================================
             LEFT SIDE
         ==================================================== */}
 
-        <section
+         <section
           className="
             relative
             flex
@@ -85,66 +95,7 @@ export default function LoginPage() {
             lg:min-h-0
           "
         >
-
-          {/* =================================================
-              LOGO
-          ================================================== */}
-
-          <Link
-            href="/"
-            className="
-              flex
-              w-fit
-              items-center
-              gap-[5px]
-              text-white
-            "
-          >
-            <span
-              className="
-                relative
-                block
-                h-[18px]
-                w-[16px]
-              "
-            >
-              <span
-                className="
-                  absolute
-                  left-0
-                  top-[3px]
-                  h-[12px]
-                  w-[8px]
-                  rounded-r-[2px]
-                  bg-[#D4FB20]
-                "
-              />
-
-              <span
-                className="
-                  absolute
-                  left-[5px]
-                  top-[5px]
-                  h-[9px]
-                  w-[9px]
-                  rotate-45
-                  rounded-[1px]
-                  bg-[#D4FB20]
-                "
-              />
-            </span>
-
-            <span
-              className="
-                text-[13px]
-                font-semibold
-                leading-none
-                tracking-[-0.3px]
-              "
-            >
-              ByteSpace
-            </span>
-          </Link>
+ 
 
           {/* =================================================
               LEFT INTRO
@@ -159,11 +110,11 @@ export default function LoginPage() {
           >
             <h1
               className="
-                text-[24px]
+                text-[20px]
                 font-semibold
-                leading-[1.1]
+                leading-[120%]
                 tracking-[-0.7px]
-                text-white
+                text-[#F5F5F6]
                 sm:text-[27px]
               "
             >
@@ -174,10 +125,10 @@ export default function LoginPage() {
               className="
                 mt-[11px]
                 max-w-[370px]
-                text-[9px]
+                text-[18px]
                 font-normal
                 leading-[15px]
-                text-white/65
+                text-[#F5F5F6]
                 sm:text-[10px]
               "
             >
@@ -221,8 +172,8 @@ export default function LoginPage() {
                 bg-white
                 p-[8px]
                 shadow-[0_8px_25px_rgba(0,0,0,0.08)]
-                sm:h-[320px]
-                sm:w-[190px]
+                sm: h-[320px]
+                sm: w-[190px]
               "
             >
               <div
@@ -248,9 +199,9 @@ export default function LoginPage() {
                 <h3
                   className="
                     truncate
-                    text-[11px]
+                    text-[20px]
                     font-semibold
-                    text-[#151515]
+                    text-[#000000]
                   "
                 >
                   Build Digital Asset
@@ -259,11 +210,11 @@ export default function LoginPage() {
                 <p
                   className="
                     mt-[2px]
-                    text-[7px]
-                    text-[#4774C8]
+                    text-[12px]
+                    text-[#CED0D3]
                   "
                 >
-                  by pupespai studio
+                  by <span className="text-[#003BE2]">pupespai studio</span>
                 </p>
 
                 <div className="mt-[9px] flex items-center gap-[5px]">
@@ -273,7 +224,7 @@ export default function LoginPage() {
                       bg-[#F3F3F3]
                       px-[7px]
                       py-[4px]
-                      text-[7px]
+                      text-[12px]
                       text-[#555]
                     "
                   >
@@ -284,14 +235,14 @@ export default function LoginPage() {
                 <div className="mt-[10px]">
                   <span
                     className="
-                      text-[12px]
+                      text-[25px]
                       font-bold
                       text-[#0055D9]
                     "
                   >
                     $25
                   </span>
-                  <span className="text-[6px] text-[#777]">
+                  <span className="text-[16px] text-[#777]">
                     /lifetime
                   </span>
                 </div>
@@ -317,8 +268,8 @@ export default function LoginPage() {
                 p-[10px]
                 shadow-[0_14px_35px_rgba(0,0,0,0.10)]
                 sm:left-[92px]
-                sm:h-[385px]
-                sm:w-[305px]
+                sm: h-[385px]
+                sm: w-[305px]
               "
             >
 
@@ -344,62 +295,7 @@ export default function LoginPage() {
                   className="object-cover"
                 />
 
-                {/* IMAGE INFO */}
-
-                <div
-                  className="
-                    absolute
-                    bottom-[7px]
-                    left-[7px]
-                    right-[7px]
-                    flex
-                    items-center
-                    justify-between
-                    gap-[4px]
-                  "
-                >
-                  <span
-                    className="
-                      rounded-full
-                      bg-white/80
-                      px-[7px]
-                      py-[4px]
-                      text-[7px]
-                      text-[#555]
-                      backdrop-blur-[2px]
-                    "
-                  >
-                    17 Lessons
-                  </span>
-
-                  <span
-                    className="
-                      rounded-full
-                      bg-white/80
-                      px-[7px]
-                      py-[4px]
-                      text-[7px]
-                      text-[#555]
-                      backdrop-blur-[2px]
-                    "
-                  >
-                    2 hours 16 mins
-                  </span>
-
-                  <span
-                    className="
-                      rounded-full
-                      bg-white/80
-                      px-[7px]
-                      py-[4px]
-                      text-[7px]
-                      text-[#555]
-                      backdrop-blur-[2px]
-                    "
-                  >
-                    59 Comments
-                  </span>
-                </div>
+                 
               </div>
 
               {/* CONTENT */}
@@ -410,9 +306,9 @@ export default function LoginPage() {
                   <h3
                     className="
                       truncate
-                      text-[14px]
+                      text-[20px]
                       font-semibold
-                      text-[#151515]
+                      text-[#000000]
                     "
                   >
                     the Power of Big Data
@@ -421,14 +317,14 @@ export default function LoginPage() {
                   <div className="flex items-center gap-[3px]">
                     <span
                       className="
-                        text-[10px]
-                        text-[#666]
+                        text-[18px]
+                        text-[#4F4F4F]
                       "
                     >
                       4.5
                     </span>
 
-                    <span className="text-[13px] text-[#D4FB20]">
+                    <span className="text-[18px] text-[#D4FB20]">
                       ★
                     </span>
                   </div>
@@ -437,11 +333,11 @@ export default function LoginPage() {
                 <p
                   className="
                     mt-[2px]
-                    text-[7px]
-                    text-[#4774C8]
+                    text-[12px]
+                    text-[#4F4F4F]
                   "
                 >
-                  by pupespai studio
+                  by <span className="text-[#003BE2]">pupespai studio</span>
                 </p>
 
                 {/* LEVEL + AVATARS */}
@@ -461,7 +357,7 @@ export default function LoginPage() {
                   >
                     <span
                       className="
-                        text-[8px]
+                        text-[16px]
                         text-[#555]
                       "
                     >
@@ -470,7 +366,7 @@ export default function LoginPage() {
 
                     <span
                       className="
-                        text-[8px]
+                        text-[12px]
                         text-[#555]
                       "
                     >
@@ -543,7 +439,7 @@ export default function LoginPage() {
                 <div className="mt-[9px]">
                   <span
                     className="
-                      text-[14px]
+                      text-[20px]
                       font-bold
                       text-[#0055D9]
                     "
@@ -553,7 +449,7 @@ export default function LoginPage() {
 
                   <span
                     className="
-                      text-[7px]
+                      text-[16px]
                       text-[#777]
                     "
                   >
@@ -741,168 +637,266 @@ export default function LoginPage() {
           <div
             className="
               w-full
-              max-w-[460px]
-              rounded-[14px]
+              max-w-[430px]
+              rounded-[18px]
+              border
+              border-white/70
               bg-white
-              px-[32px]
-              py-[36px]
-              shadow-[0_10px_35px_rgba(0,0,0,0.08)]
-              sm:px-[48px]
-              sm:py-[43px]
-              lg:min-h-[625px]
+              px-[28px]
+              py-[30px]
+              shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+              sm:px-[38px]
+              sm:py-[36px]
+              lg:min-h-[610px]
             "
           >
-
             {/* =================================================
-                SMALL TITLE
+                HEADER
             ================================================== */}
 
-            <p
-              className="
-                text-[10px]
-                font-normal
-                leading-none
-                text-[#4774C8]
-                sm:text-[11px]
-              "
-            >
-              Sign In
-            </p>
+            <div>
+              <p
+                className="
+                  text-[18px]
+                  font-medium
+                  uppercase
+                  tracking-[0.3px]
+                  text-[#003BE2]
+                "
+              >
+                Sign In
+              </p>
 
-            {/* =================================================
-                MAIN TITLE
-            ================================================== */}
+              <h2
+                className="
+                  mt-[5px]
+                  text-[44px]
+                  font-semibold
+                  leading-[1.1]
+                  tracking-[-1px]
+                  text-[#242528]
+                  sm: text-[30px]
+                "
+              >
+                Welcome Back
+              </h2>
 
-            <h2
-              className="
-                mt-[5px]
-                text-[30px]
-                font-semibold
-                leading-[1.08]
-                tracking-[-1px]
-                text-[#171717]
-                sm:text-[32px]
-              "
-            >
-              Welcome Back
-            </h2>
+              
+            </div>
 
             {/* =================================================
                 FORM
             ================================================== */}
 
-            <form className="mt-[34px]">
-
-              {/* EMAIL */}
+            <form className="mt-[30px]">
+              {/* =================================================
+                  EMAIL
+              ================================================== */}
 
               <div>
                 <label
                   htmlFor="email"
                   className="
+                    mb-[7px]
                     block
-                    text-[8px]
+                    text-[14px]
                     font-medium
-                    leading-none
-                    text-[#222]
+                    text-[#242528]
                   "
                 >
-                  Email
+                  Email 
                 </label>
 
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="designer@example.com"
-                  className="
-                    mt-[8px]
-                    h-[39px]
-                    w-full
-                    rounded-[7px]
-                    border
-                    border-[#E7E7E7]
-                    bg-white
-                    px-[12px]
-                    text-[9px]
-                    text-[#222]
-                    outline-none
-                    placeholder:text-[#B7B7B7]
-                    focus:border-[#C8FF00]
-                    focus:ring-2
-                    focus:ring-[#D4FB20]/20
-                  "
-                />
+                <div className="relative">
+                  <Mail
+                    size={14}
+                    strokeWidth={1.7}
+                    className="
+                      pointer-events-none
+                      absolute
+                      left-[13px]
+                      top-1/2
+                      -translate-y-1/2
+                      text-[#A5A5A5]
+                    "
+                  />
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    placeholder="designer@example.com"
+                    className="
+                      h-[42px]
+                      w-full
+                      rounded-[8px]
+                      border
+                      border-[#E5E5E5]
+                      bg-[#FCFCFC]
+                      pl-[38px]
+                      pr-[12px]
+                      text-[10px]
+                      text-[#222]
+                      outline-none
+                      transition-all
+                      duration-150
+                      placeholder:text-[#B8B8B8]
+                      focus:border-[#B9E900]
+                      focus:bg-white
+                      focus:ring-[3px]
+                      focus:ring-[#D4FB20]/20
+                    "
+                  />
+                </div>
               </div>
 
-              {/* PASSWORD */}
+              {/* =================================================
+                  PASSWORD
+              ================================================== */}
 
-              <div className="mt-[20px]">
-                <label
-                  htmlFor="password"
-                  className="
-                    block
-                    text-[8px]
-                    font-medium
-                    leading-none
-                    text-[#222]
-                  "
-                >
-                  Password
-                </label>
+              <div className="mt-[18px]">
+                <div className="mb-[7px] flex items-center justify-between">
+                  <label
+                    htmlFor="password"
+                    className="
+                      text-[14px]
+                      font-medium
+                      text-[#242528]
+                    "
+                  >
+                    Password
+                  </label>
 
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="••••••••"
-                  className="
-                    mt-[8px]
-                    h-[39px]
-                    w-full
-                    rounded-[7px]
-                    border
-                    border-[#E7E7E7]
-                    bg-white
-                    px-[12px]
-                    text-[10px]
-                    text-[#222]
-                    outline-none
-                    placeholder:text-[#B7B7B7]
-                    focus:border-[#C8FF00]
-                    focus:ring-2
-                    focus:ring-[#D4FB20]/20
-                  "
-                />
+                   
+                </div>
+
+                <div className="relative">
+                  <LockKeyhole
+                    size={14}
+                    strokeWidth={1.7}
+                    className="
+                      pointer-events-none
+                      absolute
+                      left-[13px]
+                      top-1/2
+                      -translate-y-1/2
+                      text-[#A5A5A5]
+                    "
+                  />
+
+                  <input
+                    id="password"
+                    name="password"
+                    type={
+                      showPassword
+                        ? "text"
+                        : "password"
+                    }
+                    autoComplete="current-password"
+                    placeholder="Enter your password"
+                    className="
+                      h-[42px]
+                      w-full
+                      rounded-[8px]
+                      border
+                      border-[#E5E5E5]
+                      bg-[#FCFCFC]
+                      pl-[38px]
+                      pr-[42px]
+                      text-[10px]
+                      text-[#222]
+                      outline-none
+                      transition-all
+                      duration-150
+                      placeholder:text-[#B8B8B8]
+                      focus:border-[#B9E900]
+                      focus:bg-white
+                      focus:ring-[3px]
+                      focus:ring-[#D4FB20]/20
+                    "
+                  />
+
+                  {/* =========================================
+                      SHOW / HIDE PASSWORD
+                  ========================================== */}
+
+                  <button
+                    type="button"
+                    aria-label={
+                      showPassword
+                        ? "Hide password"
+                        : "Show password"
+                    }
+                    onClick={() =>
+                      setShowPassword(
+                        (prev) => !prev
+                      )
+                    }
+                    className="
+                      absolute
+                      right-[9px]
+                      top-1/2
+                      flex
+                      h-[26px]
+                      w-[26px]
+                      -translate-y-1/2
+                      items-center
+                      justify-center
+                      rounded-full
+                      text-[#999]
+                      transition-all
+                      duration-150
+                      hover:bg-[#F1F1F1]
+                      hover:text-[#333]
+                      active:scale-95
+                    "
+                  >
+                    {showPassword ? (
+                      <EyeOff
+                        size={14}
+                        strokeWidth={1.7}
+                      />
+                    ) : (
+                      <Eye
+                        size={14}
+                        strokeWidth={1.7}
+                      />
+                    )}
+                  </button>
+                </div>
               </div>
 
-              {/* SIGN IN BUTTON */}
+             
 
-              <div className="mt-[20px] flex justify-end">
-                <button
-                  type="submit"
-                  className="
-                    flex
-                    h-[32px]
-                    min-w-[78px]
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#D4FB20]
-                    px-[15px]
-                    text-[9px]
-                    font-medium
-                    leading-none
-                    text-[#111]
-                    transition-all
-                    duration-150
-                    hover:brightness-95
-                    hover:shadow-[0_5px_15px_rgba(212,251,32,0.25)]
-                    active:scale-[0.97]
-                  "
-                >
-                  Sign In
-                </button>
-              </div>
+              {/* =================================================
+                  SIGN IN BUTTON
+              ================================================== */}
+
+              <button
+                type="submit"
+                className="
+                  mt-[21px]
+                  flex
+                  h-[42px]
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-[9px]
+                  bg-[#D4FB20]
+                  text-[10px]
+                  font-semibold
+                  text-[#111]
+                  shadow-[0_5px_15px_rgba(212,251,32,0.15)]
+                  transition-all
+                  duration-150
+                  hover:brightness-[0.97]
+                  hover:shadow-[0_7px_20px_rgba(212,251,32,0.25)]
+                  active:scale-[0.99]
+                "
+              >
+                Sign In
+              </button>
             </form>
 
             {/* =================================================
@@ -911,116 +905,153 @@ export default function LoginPage() {
 
             <div
               className="
-                mt-[40px]
+                mt-[29px]
                 flex
                 items-center
                 gap-[10px]
               "
             >
-              <span className="h-px flex-1 bg-[#E7E7E7]" />
+              <span
+                className="
+                  h-px
+                  flex-1
+                  bg-[#E9E9E9]
+                "
+              />
 
               <span
                 className="
-                  text-[9px]
+                  whitespace-nowrap
+                  text-[8px]
                   font-normal
-                  text-[#999]
+                  text-[#A0A0A0]
                 "
               >
-                or
+                OR CONTINUE WITH
               </span>
 
-              <span className="h-px flex-1 bg-[#E7E7E7]" />
+              <span
+                className="
+                  h-px
+                  flex-1
+                  bg-[#E9E9E9]
+                "
+              />
             </div>
 
             {/* =================================================
-                SOCIAL BUTTONS
+                SOCIAL LOGIN
             ================================================== */}
 
             <div
               className="
-                mt-[27px]
+                mt-[20px]
                 flex
                 items-center
                 justify-center
-                gap-[12px]
+                gap-[10px]
               "
             >
+              {/* FACEBOOK */}
+
               <button
                 type="button"
                 aria-label="Continue with Facebook"
                 className="
                   flex
-                  h-[46px]
-                  w-[58px]
+                  h-[42px]
+                  flex-1
                   items-center
                   justify-center
-                  rounded-[13px]
+                  gap-[8px]
+                  rounded-[9px]
                   border
                   border-[#E5E5E5]
                   bg-white
-                  text-[#111]
-                  transition-colors
-                  hover:bg-[#F8F8F8]
+                  text-[#222]
+                  transition-all
+                  duration-150
+                  hover:border-[#D5D5D5]
+                  hover:bg-[#FAFAFA]
+                  active:scale-[0.98]
                 "
               >
-                <Facebook
-                  size={19}
-                  strokeWidth={2.2}
-                  fill="currentColor"
-                />
+                <FaFacebookF size={14} />
+
+                <span
+                  className="
+                    text-[9px]
+                    font-medium
+                  "
+                >
+                  Facebook
+                </span>
               </button>
+
+              {/* GOOGLE */}
 
               <button
                 type="button"
                 aria-label="Continue with Google"
                 className="
                   flex
-                  h-[46px]
-                  w-[58px]
+                  h-[42px]
+                  flex-1
                   items-center
                   justify-center
-                  rounded-[13px]
+                  gap-[8px]
+                  rounded-[9px]
                   border
                   border-[#E5E5E5]
                   bg-white
-                  text-[19px]
-                  font-semibold
-                  text-[#111]
-                  transition-colors
-                  hover:bg-[#F8F8F8]
+                  text-[#222]
+                  transition-all
+                  duration-150
+                  hover:border-[#D5D5D5]
+                  hover:bg-[#FAFAFA]
+                  active:scale-[0.98]
                 "
               >
-                G
+                <FaGoogle size={14} />
+
+                <span
+                  className="
+                    text-[9px]
+                    font-medium
+                  "
+                >
+                  Google
+                </span>
               </button>
             </div>
 
             {/* =================================================
-                REGISTER
+                CREATE ACCOUNT
             ================================================== */}
 
             <p
               className="
-                mt-[57px]
+                mt-[37px]
                 text-center
-                text-[8px]
-                font-normal
-                leading-none
+                text-[11px]
+                leading-[14px]
                 text-[#999]
               "
             >
-              New user?{" "}
+              New to ByteSpace?{" "}
               <Link
                 href="/register"
                 className="
                   font-medium
                   text-[#4774C8]
+                  transition-colors
+                  hover:text-[#003BE2]
                   hover:underline
                 "
               >
                 Create an account
               </Link>
             </p>
-
           </div>
         </section>
       </div>
