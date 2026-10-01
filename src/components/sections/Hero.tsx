@@ -309,7 +309,7 @@ export default function Hero() {
 
           {/* Search Button */}
 
-          <Link href="/search">
+          <Link href="/course">
            <button
             type="button"
             className="

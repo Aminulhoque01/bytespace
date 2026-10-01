@@ -63,7 +63,7 @@ export default function Navbar() {
           "
         >
           <NavLink href="/">Home</NavLink>
-          <NavLink href="/search">Courses</NavLink>
+          <NavLink href="/course">Courses</NavLink>
           <NavLink href="/creators">Creators</NavLink>
         </div>
 
