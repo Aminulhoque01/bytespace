@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -71,16 +72,23 @@ export default function CreatorHero({
           z-10
           mx-auto
           w-full
-          max-w-[1160px]
-          px-[16px]
-          pb-[44px]
-          pt-[29px]
+          max-w-[1200px]
 
-          sm:px-[25px]
-          sm:pb-[50px]
+          px-5
+          pb-10
+          pt-[135px]
+
+          sm:px-6
+          sm:pb-12
+          sm:pt-[145px]
+
+          md:px-8
+          md:pb-14
+          md:pt-[155px]
 
           lg:px-0
-          lg:pt-[29px]
+          lg:pb-[44px]
+          lg:pt-[155px]
         "
       >
         {/* ===================================================
@@ -90,10 +98,11 @@ export default function CreatorHero({
         <div
           className="
             flex
+            w-full
             items-center
-            gap-[12px]
+            gap-3
 
-            sm:gap-[14px]
+            sm:gap-4
           "
         >
           {/* CREATOR IMAGE */}
@@ -101,16 +110,24 @@ export default function CreatorHero({
           <div
             className="
               relative
-              h-[54px]
-              w-[54px]
+              h-[72px]
+              w-[72px]
               shrink-0
               overflow-hidden
-              rounded-[13px]
+              rounded-[18px]
               bg-[#EDEDED]
 
               sm:h-[80px]
               sm:w-[80px]
-              sm:rounded-[14px]
+              sm:rounded-[16px]
+
+              md:h-[88px]
+              md:w-[88px]
+              md:rounded-[19px]
+
+              lg:h-[96px]
+              lg:w-[96px]
+              lg:rounded-[24px]
             "
           >
             <Image
@@ -118,23 +135,25 @@ export default function CreatorHero({
               alt={creatorName}
               fill
               priority
-              className="object-cover"
               sizes="
-                (max-width: 639px) 54px,
-                80px
+                (max-width: 639px) 72px,
+                (max-width: 767px) 80px,
+                (max-width: 1023px) 88px,
+                96px
               "
+              className="object-cover"
             />
           </div>
 
           {/* CREATOR INFO */}
 
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <div
               className="
                 flex
                 flex-wrap
                 items-center
-                gap-[8px]
+                gap-2
               "
             >
               {/* CREATOR NAME */}
@@ -142,15 +161,18 @@ export default function CreatorHero({
               <h1
                 className="
                   m-0
-                  text-[23px]
+                  max-w-full
+                  truncate
+                  text-[24px]
                   font-semibold
-                  leading-none
-                  tracking-[-0.5px]
-                  text-white
+                  leading-[1.2]
+                  text-[#F5F5F6]
 
-                  sm:text-[27px]
+                  sm:text-[28px]
 
-                  md:text-[29px]
+                  md:text-[32px]
+
+                  lg:text-[36px]
                 "
               >
                 {creatorName}
@@ -161,19 +183,29 @@ export default function CreatorHero({
               <span
                 className="
                   flex
-                  h-[22px]
+                  h-[28px]
+                  shrink-0
                   items-center
                   justify-center
                   rounded-full
-                  bg-[#C8FF00]
-                  px-[11px]
-                  text-[8px]
+                  bg-[#D4FB20]
+                  px-3
+                  text-[9px]
                   font-medium
-                  text-[#222]
+                  text-[#242528]
 
-                  sm:h-[23px]
-                  sm:px-[12px]
-                  sm:text-[8px]
+                  sm:h-[30px]
+                  sm:px-3.5
+                  sm:text-[10px]
+
+                  md:h-[32px]
+                  md:px-4
+                  md:text-[11px]
+
+                  lg:h-[35px]
+                  lg:w-[103px]
+                  lg:px-[11px]
+                  lg:text-[12px]
                 "
               >
                 Creator
@@ -185,13 +217,19 @@ export default function CreatorHero({
             <p
               className="
                 m-0
-                mt-[7px]
-                text-[9px]
+                mt-1.5
+                truncate
+                text-[12px]
                 font-medium
-                leading-none
-                text-white/90
+                leading-[1.3]
+                text-[#F5F5F6]
 
-                sm:text-[10px]
+                sm:mt-2
+                sm:text-[14px]
+
+                md:text-[16px]
+
+                lg:text-[18px]
               "
             >
               {role}
@@ -205,22 +243,27 @@ export default function CreatorHero({
 
         <div
           className="
-            mt-[21px]
+            mt-5
             max-w-[1110px]
+
+            sm:mt-6
+
+            md:mt-7
           "
         >
           <p
             className="
               m-0
-              text-[9px]
+              text-[14px]
               font-normal
               leading-[1.65]
               text-white/90
 
-              sm:text-[10px]
-              sm:leading-[1.6]
+              sm:text-[15px]
 
-              md:text-[11px]
+              md:text-[17px]
+
+              lg:text-[18px]
             "
           >
             Welcome to the creative world of {creatorName}. Here,
@@ -232,38 +275,22 @@ export default function CreatorHero({
           <p
             className="
               m-0
-              mt-[2px]
-              text-[9px]
+              mt-1
+              text-[14px]
               font-normal
               leading-[1.65]
               text-white/90
 
-              sm:text-[10px]
-              sm:leading-[1.6]
+              sm:text-[15px]
 
-              md:text-[11px]
+              md:text-[17px]
+
+              lg:text-[18px]
             "
           >
             I dive into my creative portfolio, showcasing a glimpse
             of my artistic endeavors. From digital designs to
             multimedia projects, each piece tells a unique story.
-          </p>
-
-          <p
-            className="
-              m-0
-              text-[9px]
-              font-normal
-              leading-[1.65]
-              text-white/90
-
-              sm:text-[10px]
-              sm:leading-[1.6]
-
-              md:text-[11px]
-            "
-          >
-            Explore the world of creativity with me.
           </p>
         </div>
 
@@ -273,14 +300,17 @@ export default function CreatorHero({
 
         <div
           className="
-            mt-[20px]
+            mt-6
             flex
             flex-col
-            gap-[14px]
+            gap-4
 
+            sm:mt-7
             sm:flex-row
             sm:items-center
             sm:justify-between
+
+            md:mt-8
           "
         >
           {/* STATS */}
@@ -288,8 +318,12 @@ export default function CreatorHero({
           <div
             className="
               flex
+              w-full
               items-center
-              gap-[9px]
+              gap-2
+
+              sm:w-auto
+              sm:gap-2.5
             "
           >
             {/* PRODUCTS */}
@@ -297,21 +331,48 @@ export default function CreatorHero({
             <div
               className="
                 flex
-                h-[27px]
+                h-[42px]
+                min-w-0
+                flex-1
                 items-center
+                justify-center
                 rounded-full
-                bg-white
-                px-[13px]
-                text-[8px]
+                bg-[#FFFFFF]
+                px-3
+                text-[14px]
                 font-medium
-                text-[#333]
+                text-[#242528]
+
+                sm:h-[44px]
+                sm:w-[140px]
+                sm:flex-none
+                sm:justify-start
+                sm:text-[16px]
+
+                md:h-[46px]
+                md:text-[18px]
               "
             >
-              <span className="text-[#073FDC]">
+              <span
+                className="
+                  shrink-0
+                  text-[15px]
+                  text-[#242528]
+
+                  sm:text-[16px]
+
+                  md:text-[18px]
+                "
+              >
                 {products}
               </span>
 
-              <span className="ml-[4px]">
+              <span
+                className="
+                  ml-1
+                  whitespace-nowrap
+                "
+              >
                 Products
               </span>
             </div>
@@ -321,21 +382,49 @@ export default function CreatorHero({
             <div
               className="
                 flex
-                h-[27px]
+                h-[42px]
+                min-w-0
+                flex-1
                 items-center
+                justify-center
                 rounded-full
-                bg-white
-                px-[13px]
-                text-[8px]
+                bg-[#FFFFFF]
+                px-3
+                text-[14px]
                 font-medium
-                text-[#333]
+                text-[#242528]
+
+                sm:h-[44px]
+                sm:w-[140px]
+                sm:flex-none
+                sm:justify-start
+                sm:text-[16px]
+
+                md:h-[46px]
+                md:text-[18px]
               "
             >
-              <span className="text-[#073FDC]">
+              <span
+                className="
+                  shrink-0
+                  text-[15px]
+                  text-[#242528]
+
+                  sm:text-[16px]
+
+                  md:text-[18px]
+                "
+              >
                 {followers}
               </span>
 
-              <span className="ml-[4px]">
+              <span
+                className="
+                  ml-1
+                  whitespace-nowrap
+                  text-[#242528]
+                "
+              >
                 Followers
               </span>
             </div>
@@ -347,22 +436,28 @@ export default function CreatorHero({
             type="button"
             className="
               flex
-              h-[29px]
-              w-[61px]
+              h-[44px]
+              w-full
               items-center
               justify-center
               rounded-full
               border-0
-              bg-[#C8FF00]
-              text-[8px]
+              bg-[#D4FB20]
+              text-[15px]
               font-medium
-              text-[#222]
+              text-[#040819]
               transition-all
               duration-150
               hover:brightness-95
               active:scale-[0.96]
 
-              sm:w-[57px]
+              sm:h-[44px]
+              sm:w-[101px]
+
+              md:h-[46px]
+              md:text-[16px]
+
+              lg:text-[18px]
             "
           >
             Follow

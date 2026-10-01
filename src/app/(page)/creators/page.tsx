@@ -1,10 +1,11 @@
-import CreatorHero from '@/src/components/Creator/CreatorHero';
+
+import CreatorPage from '@/src/components/Creator/CreatorPage';
 
 
 const creators = () => {
     return (
         <div>
-            <CreatorHero/>
+            <CreatorPage/>
         </div>
     );
 };
