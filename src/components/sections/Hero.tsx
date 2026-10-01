@@ -53,26 +53,95 @@ export default function Hero() {
          <Navbar />
       </div>
 
-      {/* =========================================================
-          TOP LEFT LIME DECORATION
-      ========================================================= */}
+      {/* =====================================================
+          LEFT LIME ABSTRACT SHAPE
+      ===================================================== */}
 
       <div
         aria-hidden="true"
         className="
-            pointer-events-none
-            absolute
-            -left-[115px]
-            top-[110px]
-            z-[1]
-            h-[220px]
-            w-[220px]
-            rotate-[27deg]
-            rounded-[42%]
-            bg-[#CBFC01]
-            ...
+          pointer-events-none
+          absolute
+          -left-[12px]
+          top-[130px]
+          z-[20]
+          h-[180px]
+          w-[180px]
         "
+      >
+        {/* =================================================
+            STROKE 1
+        ================================================== */}
+
+        <span
+          className="
+            absolute
+            left-[4px]
+            top-[18px]
+            h-[43px]
+            w-[125px]
+            rotate-[25deg]
+            rounded-full
+            bg-[#CBFC01]
+            
+          "
         />
+
+        {/* =================================================
+            STROKE 2
+        ================================================== */}
+
+        <span
+          className="
+            absolute
+            left-[-2px]
+            top-[61px]
+            h-[43px]
+            w-[125px]
+            rotate-[25deg]
+            rounded-full
+            bg-[#CBFC01]
+          "
+        />
+
+        {/* =================================================
+            STROKE 3
+        ================================================== */}
+
+        <span
+          className="
+            absolute
+            left-[-7px]
+            top-[104px]
+            h-[43px]
+            w-[116px]
+            rotate-[25deg]
+            rounded-full
+            bg-[#CBFC01]
+          "
+        />
+
+        {/* =================================================
+            STROKE 4
+        ================================================== */}
+
+        <span
+          className="
+            absolute
+            left-[-15px]
+            top-[146px]
+            h-[40px]
+            w-[78px]
+            rotate-[25deg]
+            rounded-full
+            bg-[#CBFC01]
+          "
+        />
+      </div>
+
+
+    
+      
 
       {/* =========================================================
           TOP RIGHT LIME DECORATION
@@ -133,20 +202,20 @@ export default function Hero() {
             max-w-[900px]
             pt-[30px]
             text-center
-            text-[42px]
+            text-[72px]
             font-bold
-            leading-[0.98]
+            leading-[120%]
             tracking-[-2.5px]
             text-white
 
-            sm:pt-[35px]
-            sm:text-[52px]
+            sm: pt-[35px]
+            sm: text-[52px]
 
             md:text-[62px]
 
             lg:text-[70px]
 
-            xl:text-[74px]
+            xl: text-[72px]
           "
         >
           Get Access to Hundreds
@@ -164,9 +233,9 @@ export default function Hero() {
             z-20
             mx-auto
             mt-[24px]
-            max-w-[780px]
+            max-w-[880px]
             text-center
-            text-[12px]
+            text-[18px]
             leading-[1.5]
             text-white
 
