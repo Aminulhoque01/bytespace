@@ -16,6 +16,7 @@ import {
   FaFacebookF,
   FaGoogle,
 } from "react-icons/fa";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -58,7 +59,8 @@ export default function LoginPage() {
           backgroundSize: "60px 60px",
         }}
       />
-
+      
+    
       {/* =====================================================
           MAIN CONTENT
       ====================================================== */}
@@ -80,8 +82,68 @@ export default function LoginPage() {
           lg:gap-[70px]
           lg:px-0
           lg:py-[48px]
+          mb-30
         "
       >
+
+          <Link
+          href="/"
+          aria-label="ByteSpace Home"
+          className="
+            absolute
+            left-0
+            top-[18px]
+            z-50
+            block
+            h-[18px]
+            w-[18px]
+          "
+        >
+         <span
+            className="relative block shrink-0"
+            style={{
+                width: "28px",
+                height: "31px",
+                marginRight: "9px",
+            }}
+            >
+            {/* Main vertical green shape */}
+            <span
+                className="absolute bg-[#C8FF00]"
+                style={{
+                left: "0px",
+                top: "0px",
+                width: "14px",
+                height: "31px",
+                borderRadius: "0 0 9px 9px",
+                }}
+            />
+
+            {/* Right rounded green shape */}
+            <span
+                className="absolute bg-[#C8FF00]"
+                style={{
+                left: "9px",
+                top: "10px",
+                width: "19px",
+                height: "20px",
+                borderRadius: "0 12px 12px 0",
+                }}
+            />
+
+            {/* Blue cut-out */}
+            <span
+                className="absolute bg-[#073FDC]"
+                style={{
+                left: "9px",
+                top: "14px",
+                width: "9px",
+                height: "11px",
+                clipPath: "polygon(0 0, 100% 50%, 0 100%)",
+                }}
+            />
+            </span>
+        </Link>
         {/* ===================================================
             LEFT SIDE
         ==================================================== */}
@@ -624,436 +686,409 @@ export default function LoginPage() {
             LOGIN CARD
         ==================================================== */}
 
-        <section
+       <section
+      className="
+        relative
+        z-30
+        flex
+        w-full
+        items-center
+        justify-center
+        top-[80]
+      "
+    >
+      {/* =====================================================
+          LOGIN CARD
+      ====================================================== */}
+
+      <div
+        className="
+          relative
+          box-border
+          h-[592px]
+          w-full
+          max-w-[364px]
+          rounded-[14px]
+          border
+          border-white/70
+          bg-white
+          px-[39px]
+          pt-[42px]
+          shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+        "
+      >
+        {/* =================================================
+            HEADER
+        ================================================== */}
+
+        <div>
+          <p
+            className="
+              m-0
+              text-[14px]
+              font-normal
+              leading-[13px]
+              text-[#4774C8]
+            "
+          >
+            Sign In
+          </p>
+
+          <h1
+            className="
+              m-0
+              mt-[5px]
+              text-[29px]
+              font-semibold
+              leading-[32px]
+              tracking-[-0.9px]
+              text-[#292A2D]
+            "
+          >
+            Welcome Back
+          </h1>
+        </div>
+
+        {/* =================================================
+            LOGIN FORM
+        ================================================== */}
+
+        <form className="mt-[28px]">
+          {/* =================================================
+              EMAIL
+          ================================================== */}
+
+          <div>
+            <label
+              htmlFor="email"
+              className="
+                mb-[16px]
+                block
+                text-[14px]
+                font-medium
+                leading-[11px]
+                text-[#242528]
+              "
+            >
+              Email
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              placeholder="designer@example.com"
+              className="
+                block
+                h-[52px]
+                w-full
+                rounded-[7px]
+                border
+                border-[#E5E5E5]
+                bg-white
+                px-[14px]
+                text-[10px]
+                font-normal
+                leading-none
+                text-[#222]
+                outline-none
+                transition-all
+                duration-150
+                placeholder:text-[#A7A7A7]
+                focus:border-[#C8FF00]
+                focus:ring-[3px]
+                focus:ring-[#D4FB20]/20
+              "
+            />
+          </div>
+
+          {/* =================================================
+              PASSWORD
+          ================================================== */}
+
+          <div className="mt-[16px]">
+            <label
+              htmlFor="password"
+              className="
+                mb-[16px]
+                block
+                text-[14px]
+                font-medium
+                leading-[11px]
+                text-[#242528]
+              "
+            >
+              Password
+            </label>
+
+            {/* PASSWORD WRAPPER */}
+
+            <div className="relative">
+              <input
+                id="password"
+                name="password"
+                type={
+                  showPassword
+                    ? "text"
+                    : "password"
+                }
+                autoComplete="current-password"
+                placeholder="••••••••"
+                className="
+                  block
+                  h-[52px]
+                  w-full
+                  rounded-[7px]
+                  border
+                  border-[#E5E5E5]
+                  bg-white
+                  px-[14px]
+                  pr-[38px]
+                  text-[10px]
+                  font-normal
+                  leading-none
+                  tracking-[1px]
+                  text-[#222]
+                  outline-none
+                  transition-all
+                  duration-150
+                  placeholder:text-[#A7A7A7]
+                  focus:border-[#C8FF00]
+                  focus:ring-[3px]
+                  focus:ring-[#D4FB20]/20
+                "
+              />
+
+              {/* =================================================
+                  EYE BUTTON
+              ================================================== */}
+
+              <button
+                type="button"
+                aria-label={
+                  showPassword
+                    ? "Hide password"
+                    : "Show password"
+                }
+                onClick={() =>
+                  setShowPassword(
+                    (prev) => !prev
+                  )
+                }
+                className="
+                  absolute
+                  right-[7px]
+                  top-1/2
+                  flex
+                  h-[24px]
+                  w-[24px]
+                  -translate-y-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  text-[#999]
+                  transition-all
+                  duration-150
+                  hover:bg-[#F3F3F3]
+                  hover:text-[#333]
+                  active:scale-95
+                "
+              >
+                {showPassword ? (
+                  <FiEyeOff
+                    size={14}
+                    strokeWidth={1.7}
+                  />
+                ) : (
+                  <FiEye
+                    size={14}
+                    strokeWidth={1.7}
+                  />
+                )}
+              </button>
+            </div>
+          </div>
+
+          {/* =================================================
+              SIGN IN BUTTON
+          ================================================== */}
+
+          <div className="mt-[15px] flex justify-end">
+            <button
+              type="submit"
+              className="
+                flex
+                h-[46px]
+                min-w-[104px]
+                items-center
+                justify-center
+                rounded-full
+                bg-[#D4FB20]
+                px-[14px]
+                text-[18px]
+                font-medium
+                leading-none
+                text-[#111]
+                shadow-[0_4px_12px_rgba(200,255,0,0.10)]
+                transition-all
+                duration-150
+                hover:brightness-[0.97]
+                hover:shadow-[0_5px_16px_rgba(200,255,0,0.22)]
+                active:scale-[0.97]
+              "
+            >
+              Sign In
+            </button>
+          </div>
+        </form>
+
+        {/* =================================================
+            DIVIDER
+        ================================================== */}
+
+        <div
           className="
-            relative
-            z-30
+            mt-[53px]
+            flex
+            w-full
+            items-center
+            gap-[8px]
+          "
+        >
+          <span
+            className="
+              h-px
+              flex-1
+              bg-[#E5E5E5]
+            "
+          />
+
+          <span
+            className="
+              px-[2px]
+              text-[9px]
+              font-normal
+              leading-none
+              text-[#999]
+            "
+          >
+            or
+          </span>
+
+          <span
+            className="
+              h-px
+              flex-1
+              bg-[#E5E5E5]
+            "
+          />
+        </div>
+
+        {/* =================================================
+            SOCIAL LOGIN
+        ================================================== */}
+
+        <div
+          className="
+            mt-[28px]
             flex
             items-center
             justify-center
-            lg:justify-end
+            gap-[10px]
           "
         >
-          <div
+          {/* FACEBOOK */}
+
+          <button
+            type="button"
+            aria-label="Continue with Facebook"
             className="
-              w-full
-              max-w-[430px]
-              rounded-[18px]
+              flex
+              h-[46px]
+              w-[46px]
+              items-center
+              justify-center
+              rounded-[12px]
               border
-              border-white/70
+              border-[#E1E1E1]
               bg-white
-              px-[28px]
-              py-[30px]
-              shadow-[0_20px_60px_rgba(0,0,0,0.12)]
-              sm:px-[38px]
-              sm:py-[36px]
-              lg:min-h-[610px]
+              text-[#111]
+              transition-all
+              duration-150
+              hover:border-[#D2D2D2]
+              hover:bg-[#FAFAFA]
+              active:scale-95
             "
           >
-            {/* =================================================
-                HEADER
-            ================================================== */}
+            <FaFacebookF
+              size={19}
+            />
+          </button>
 
-            <div>
-              <p
-                className="
-                  text-[18px]
-                  font-medium
-                  uppercase
-                  tracking-[0.3px]
-                  text-[#003BE2]
-                "
-              >
-                Sign In
-              </p>
+          {/* GOOGLE */}
 
-              <h2
-                className="
-                  mt-[5px]
-                  text-[44px]
-                  font-semibold
-                  leading-[1.1]
-                  tracking-[-1px]
-                  text-[#242528]
-                  sm: text-[30px]
-                "
-              >
-                Welcome Back
-              </h2>
+          <button
+            type="button"
+            aria-label="Continue with Google"
+            className="
+              flex
+              h-[46px]
+              w-[46px]
+              items-center
+              justify-center
+              rounded-[12px]
+              border
+              border-[#E1E1E1]
+              bg-white
+              text-[#111]
+              transition-all
+              duration-150
+              hover:border-[#D2D2D2]
+              hover:bg-[#FAFAFA]
+              active:scale-95
+            "
+          >
+            <FaGoogle
+              size={19}
+            />
+          </button>
+        </div>
 
-              
-            </div>
+        {/* =================================================
+            CREATE ACCOUNT
+        ================================================== */}
 
-            {/* =================================================
-                FORM
-            ================================================== */}
-
-            <form className="mt-[30px]">
-              {/* =================================================
-                  EMAIL
-              ================================================== */}
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="
-                    mb-[7px]
-                    block
-                    text-[14px]
-                    font-medium
-                    text-[#242528]
-                  "
-                >
-                  Email 
-                </label>
-
-                <div className="relative">
-                  <Mail
-                    size={14}
-                    strokeWidth={1.7}
-                    className="
-                      pointer-events-none
-                      absolute
-                      left-[13px]
-                      top-1/2
-                      -translate-y-1/2
-                      text-[#A5A5A5]
-                    "
-                  />
-
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    placeholder="designer@example.com"
-                    className="
-                      h-[42px]
-                      w-full
-                      rounded-[8px]
-                      border
-                      border-[#E5E5E5]
-                      bg-[#FCFCFC]
-                      pl-[38px]
-                      pr-[12px]
-                      text-[10px]
-                      text-[#222]
-                      outline-none
-                      transition-all
-                      duration-150
-                      placeholder:text-[#B8B8B8]
-                      focus:border-[#B9E900]
-                      focus:bg-white
-                      focus:ring-[3px]
-                      focus:ring-[#D4FB20]/20
-                    "
-                  />
-                </div>
-              </div>
-
-              {/* =================================================
-                  PASSWORD
-              ================================================== */}
-
-              <div className="mt-[18px]">
-                <div className="mb-[7px] flex items-center justify-between">
-                  <label
-                    htmlFor="password"
-                    className="
-                      text-[14px]
-                      font-medium
-                      text-[#242528]
-                    "
-                  >
-                    Password
-                  </label>
-
-                   
-                </div>
-
-                <div className="relative">
-                  <LockKeyhole
-                    size={14}
-                    strokeWidth={1.7}
-                    className="
-                      pointer-events-none
-                      absolute
-                      left-[13px]
-                      top-1/2
-                      -translate-y-1/2
-                      text-[#A5A5A5]
-                    "
-                  />
-
-                  <input
-                    id="password"
-                    name="password"
-                    type={
-                      showPassword
-                        ? "text"
-                        : "password"
-                    }
-                    autoComplete="current-password"
-                    placeholder="Enter your password"
-                    className="
-                      h-[42px]
-                      w-full
-                      rounded-[8px]
-                      border
-                      border-[#E5E5E5]
-                      bg-[#FCFCFC]
-                      pl-[38px]
-                      pr-[42px]
-                      text-[10px]
-                      text-[#222]
-                      outline-none
-                      transition-all
-                      duration-150
-                      placeholder:text-[#B8B8B8]
-                      focus:border-[#B9E900]
-                      focus:bg-white
-                      focus:ring-[3px]
-                      focus:ring-[#D4FB20]/20
-                    "
-                  />
-
-                  {/* =========================================
-                      SHOW / HIDE PASSWORD
-                  ========================================== */}
-
-                  <button
-                    type="button"
-                    aria-label={
-                      showPassword
-                        ? "Hide password"
-                        : "Show password"
-                    }
-                    onClick={() =>
-                      setShowPassword(
-                        (prev) => !prev
-                      )
-                    }
-                    className="
-                      absolute
-                      right-[9px]
-                      top-1/2
-                      flex
-                      h-[26px]
-                      w-[26px]
-                      -translate-y-1/2
-                      items-center
-                      justify-center
-                      rounded-full
-                      text-[#999]
-                      transition-all
-                      duration-150
-                      hover:bg-[#F1F1F1]
-                      hover:text-[#333]
-                      active:scale-95
-                    "
-                  >
-                    {showPassword ? (
-                      <EyeOff
-                        size={14}
-                        strokeWidth={1.7}
-                      />
-                    ) : (
-                      <Eye
-                        size={14}
-                        strokeWidth={1.7}
-                      />
-                    )}
-                  </button>
-                </div>
-              </div>
-
-             
-
-              {/* =================================================
-                  SIGN IN BUTTON
-              ================================================== */}
-
-              <button
-                type="submit"
-                className="
-                  mt-[21px]
-                  flex
-                  h-[42px]
-                  w-full
-                  items-center
-                  justify-center
-                  rounded-[9px]
-                  bg-[#D4FB20]
-                  text-[10px]
-                  font-semibold
-                  text-[#111]
-                  shadow-[0_5px_15px_rgba(212,251,32,0.15)]
-                  transition-all
-                  duration-150
-                  hover:brightness-[0.97]
-                  hover:shadow-[0_7px_20px_rgba(212,251,32,0.25)]
-                  active:scale-[0.99]
-                "
-              >
-                Sign In
-              </button>
-            </form>
-
-            {/* =================================================
-                DIVIDER
-            ================================================== */}
-
-            <div
-              className="
-                mt-[29px]
-                flex
-                items-center
-                gap-[10px]
-              "
-            >
-              <span
-                className="
-                  h-px
-                  flex-1
-                  bg-[#E9E9E9]
-                "
-              />
-
-              <span
-                className="
-                  whitespace-nowrap
-                  text-[8px]
-                  font-normal
-                  text-[#A0A0A0]
-                "
-              >
-                OR CONTINUE WITH
-              </span>
-
-              <span
-                className="
-                  h-px
-                  flex-1
-                  bg-[#E9E9E9]
-                "
-              />
-            </div>
-
-            {/* =================================================
-                SOCIAL LOGIN
-            ================================================== */}
-
-            <div
-              className="
-                mt-[20px]
-                flex
-                items-center
-                justify-center
-                gap-[10px]
-              "
-            >
-              {/* FACEBOOK */}
-
-              <button
-                type="button"
-                aria-label="Continue with Facebook"
-                className="
-                  flex
-                  h-[42px]
-                  flex-1
-                  items-center
-                  justify-center
-                  gap-[8px]
-                  rounded-[9px]
-                  border
-                  border-[#E5E5E5]
-                  bg-white
-                  text-[#222]
-                  transition-all
-                  duration-150
-                  hover:border-[#D5D5D5]
-                  hover:bg-[#FAFAFA]
-                  active:scale-[0.98]
-                "
-              >
-                <FaFacebookF size={14} />
-
-                <span
-                  className="
-                    text-[9px]
-                    font-medium
-                  "
-                >
-                  Facebook
-                </span>
-              </button>
-
-              {/* GOOGLE */}
-
-              <button
-                type="button"
-                aria-label="Continue with Google"
-                className="
-                  flex
-                  h-[42px]
-                  flex-1
-                  items-center
-                  justify-center
-                  gap-[8px]
-                  rounded-[9px]
-                  border
-                  border-[#E5E5E5]
-                  bg-white
-                  text-[#222]
-                  transition-all
-                  duration-150
-                  hover:border-[#D5D5D5]
-                  hover:bg-[#FAFAFA]
-                  active:scale-[0.98]
-                "
-              >
-                <FaGoogle size={14} />
-
-                <span
-                  className="
-                    text-[9px]
-                    font-medium
-                  "
-                >
-                  Google
-                </span>
-              </button>
-            </div>
-
-            {/* =================================================
-                CREATE ACCOUNT
-            ================================================== */}
-
-            <p
-              className="
-                mt-[37px]
-                text-center
-                text-[11px]
-                leading-[14px]
-                text-[#999]
-              "
-            >
-              New to ByteSpace?{" "}
-              <Link
-                href="/register"
-                className="
-                  font-medium
-                  text-[#4774C8]
-                  transition-colors
-                  hover:text-[#003BE2]
-                  hover:underline
-                "
-              >
-                Create an account
-              </Link>
-            </p>
-          </div>
-        </section>
+        <p
+          className="
+            absolute
+            bottom-[27px]
+            left-0
+            w-full
+            m-0
+            text-center
+            text-[9px]
+            font-normal
+            leading-[13px]
+            text-[#999]
+          "
+        >
+          New user?{" "}
+          <Link
+            href="/join"
+            className="
+              font-medium
+              text-[#4774C8]
+              transition-colors
+              hover:text-[#003BE2]
+              hover:underline
+            "
+          >
+            Create an account
+          </Link>
+        </p>
+      </div>
+    </section>
       </div>
     </main>
   );
